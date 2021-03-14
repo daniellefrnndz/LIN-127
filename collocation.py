@@ -1,5 +1,5 @@
 import nltk
-
+#measure how often two words co-occur
 comm_success = '/Users/duanran/Desktop/commercially_successful_group_all_lyrics.txt'
 comm_success_open = open(comm_success, 'r', errors='ignore')
 comm_success_corpus = comm_success_open.read()
@@ -20,7 +20,7 @@ for w1, w2 in bigram_fd:
         score = pw1w2/ (pw1*pw2)
         collocation.append((score,(w1,w2)))
 collocation.sort()
-print("comm success group")
+print("-----------comm success group-------------")
 for score, colloc in collocation[-30:]:#30 highest collocations
     print(score, colloc)
 
@@ -45,6 +45,6 @@ for w1, w2 in bigram_fd:
         score = pw1w2/ (pw1*pw2)
         collocation.append((score,(w1,w2)))
 collocation.sort()
-print("crit acclaim group")
+print("------------crit acclaim group-----------")
 for score, colloc in collocation[-30:]:#30 highest collocations
     print(score, colloc)
